@@ -298,7 +298,7 @@ function Signup() {
 
         // Ensure the backend is listening on the correct endpoint and port
         axios
-            .post('https://mern-signupbacked.vercel.app/signup', formData, {
+            .post('http://localhost:3001/signup', formData, {
                 headers: { "Content-Type": "multipart/form-data" },
             })
             .then((result) => {
