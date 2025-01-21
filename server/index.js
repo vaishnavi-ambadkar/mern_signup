@@ -153,7 +153,7 @@ const app = express();
 
 app.use(cors(
   {
-  origin:[" "],
+  origin:["https://mern-signup-b.vercel.app"],
   methods: ["POST","GET"],
   credentials: true
   }
