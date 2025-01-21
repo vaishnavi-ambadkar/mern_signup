@@ -14,7 +14,7 @@ function Login() {
     const handleSubmit = (e) => {
         e.preventDefault();
         axios
-            .post('https://mern-signupbacked.vercel.app/login', { email, password })
+            .post('http://localhost:3001/login', { email, password })
             .then((result) => {
                 if (result.data.message === "Success") {
                     alert("Login successful!"); // Success pop-up
