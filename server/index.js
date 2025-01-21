@@ -150,7 +150,14 @@ const cloudinary = require("cloudinary").v2;
 const app = express();
 
 // Middleware
-app.use(cors());
+
+app.use(cors(
+  {
+  origin:[" "],
+  methods: ["POST","GET"],
+  credentials: true
+  }
+));
 app.use(express.json());
 app.use(fileUpload({ useTempFiles: true, tempFileDir: "/tmp/" }));
 
@@ -182,7 +189,10 @@ const EmployeeSchema = new mongoose.Schema({
 const EmployeeModel = mongoose.model("Employee", EmployeeSchema);
 
 // Routes
-
+app.get("/",(req,res) => 
+    {
+      res.json("Hi");
+    })
 // Login Endpoint
 app.post("/login", (req, res) => {
   const { email, password } = req.body;
