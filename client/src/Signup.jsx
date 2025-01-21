@@ -238,6 +238,7 @@ function Signup() {
     const [file, setFile] = useState(null); // State for file upload
     const [loading, setLoading] = useState(false); // Loading state
     const navigate = useNavigate();
+    axios.defaults.withCredentials = true;
 
     const handleFileChange = (e) => {
         const selectedFile = e.target.files[0];
